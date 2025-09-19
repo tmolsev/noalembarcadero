@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Al Embarcadero en La Cala del Moral</title>
+    <!-- Tailwind CSS CDN para estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jsPDF para la generación de PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-beige': '#d4c1a5',
+                        'card-beige': '#e6dac0',
+                        'dark-brown': '#6e4d41',
+                        'teal-water': '#2b6d7a',
+                        'teal-dark': '#215863',
+                        'border-brown': '#a79277',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-beige flex flex-col min-h-screen">
+    <div class="container mx-auto p-4 md:p-8 flex-grow">
+        <!-- Sección del Encabezado -->
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-dark-brown mb-4 drop-shadow-lg">
+                ¡NO AL EMBARCADERO EN LA CALA DEL MORAL!
+            </h1>
+            <p class="text-lg md:text-xl text-teal-dark">
+                Luchando por un futuro sostenible para nuestra costa.
+            </p>
+        </header>
+
+        <!-- Imagen principal -->
+        <div class="mb-12 rounded-2xl shadow-xl overflow-hidden">
+            <img src="https://noalembarcadero.netlify.app/cartel_no_embarcadero.jpeg" alt="Cartel de 'No al Embarcadero'" class="w-full h-auto">
+        </div>
+
+        <!-- Sección de Introducción -->
+        <section class="bg-card-beige p-8 rounded-2xl shadow-lg mb-12 border-4 border-border-brown">
+            <p class="text-lg leading-relaxed text-dark-brown">
+                A raíz del proceso de información pública del proyecto básico de embarcadero, en el que el Ayuntamiento del Rincón de la Victoria pretende gastar en torno a 1.000.000 € para su construcción y 30.000 € al año en mantenimiento, ha surgido un movimiento entre los vecinos y asociaciones que pretende luchar por lo que consideramos un enclave único.
+            </p>
+        </section>
+
+        <!-- Sección de Razones -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-dark-brown mb-6 text-center md:text-left">Nuestras razones principales</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tarjeta de Razón 1 -->
+                <div class="bg-card-beige p-6 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 border-4 border-border-brown">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-xl font-semibold text-dark-brown mb-2">Uso de la playa</h3>
+                    <p class="text-dark-brown">Reducirá el uso libre de la playa, muy querida por vecinos y bañistas.</p>
+                </div>
+                <!-- Tarjeta de Razón 2 -->
+                <div class="bg-card-beige p-6 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 border-4 border-border-brown">
+                    <div class="text-4xl mb-4">🌊</div>
+                    <h3 class="text-xl font-semibold text-dark-brown mb-2">Entorno natural</h3>
+                    <p class="text-dark-brown">Alterará el entorno natural de acantilados y cuevas submarinas.</p>
+                </div>
+                <!-- Tarjeta de Razón 3 -->
+                <div class="bg-card-beige p-6 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 border-4 border-border-brown">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="text-xl font-semibold text-dark-brown mb-2">Especie en peligro</h3>
+                    <p class="text-dark-brown">Amenaza a la Patella ferrugínea, una especie en peligro de extinción.</p>
+                </div>
+                <!-- Tarjeta de Razón 4 -->
+                <div class="bg-card-beige p-6 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 border-4 border-border-brown">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="text-xl font-semibold text-dark-brown mb-2">Retorno económico</h3>
+                    <p class="text-dark-brown">No tendrá retorno económico: lo pagaremos entre todos sin beneficio real.</p>
+                </div>
+                <!-- Tarjeta de Razón 5 -->
+                <div class="bg-card-beige p-6 rounded-2xl shadow-md transform transition duration-300 hover:scale-105 border-4 border-border-brown">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-semibold text-dark-brown mb-2">Vulnerabilidad</h3>
+                    <p class="text-dark-brown">Será vulnerable a temporales y costará miles de € en mantenimiento cada año.</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center bg-teal-water p-6 rounded-2xl border border-teal-dark shadow-xl">
+                <p class="text-lg font-medium text-white">
+                    La Cala del Moral no necesita cemento en el mar, sino proteger su playa, su biodiversidad y el derecho al uso público del litoral.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de Propuesta y Aceptación en los Presupuestos Participativos -->
+        <section class="bg-card-beige p-8 rounded-2xl shadow-lg mb-12 border-4 border-border-brown">
+            <h2 class="text-3xl font-bold text-dark-brown mb-6 text-center md:text-left">
+                PROPUESTA Y ACEPTACIÓN DEL EMBARCADERO EN LOS PRESUPUESTOS PARTICIPATIVOS DE 2019
+            </h2>
+            <p class="text-lg leading-relaxed text-dark-brown mb-4">
+                El Ayuntamiento argumenta que el embarcadero surge como una propuesta secundada por muchos vecinos a través de los presupuestos participativos. Tras unas consultas en buscadores y hemerotecas, podemos indicar que:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-dark-brown mb-6">
+                <li>En el proceso de Presupuestos Participativos de 2019 se recibieron 280 propuestas ciudadanas en total.</li>
+                <li>El Ayuntamiento revisó las propuestas y las dejó en 15, clasificadas en 5 grupos, para que votaran.</li>
+                <li>El embarcadero estaba en el grupo 4 junto con 'Nuevas Rutas de Senderimos y Su Señalización' y 'Puesta en Valor Cueva del Tesoro'.</li>
+                <li>De esas 3, los vecinos eligieron la propuesta de 'Nuevas Rutas de Senderimos y Su Señalización', no la del embarcadero.</li>
+                <li>Además de asignar presupuesto a la propuesta más votada de cada grupo, el Ayuntamiento decidió por su parte llevar adelante otras 6 propuestas y entre ellas no estaba el embarcadero.</li>
+                <li>En cuanto a participación, solamente votaron 517 vecinos, es decir, tan solo un 1% de la población.</li>
+                <li>Aún así, el alcalde dijo que 'muchos han sido los vecinos y vecinas empadronados que lo han propuesto como inversión municipal', tal y como recogió Malaga Hoy.</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-dark-brown mb-6">
+                Dicho esto, es posible que algún vecino presentara como propuesta la construcción de un embarcadero para permitir el desembarco y la llegada de turistas desde otras localidades, pero lo que está claro es que no tuvo un apoyo importante, ni siquiera entre ese 1% que votó en su momento.
+            </p>
+            <div>
+                <h3 class="text-xl font-semibold text-dark-brown mb-2">Fuentes:</h3>
+                <ul class="list-none space-y-1 text-sm text-teal-water">
+                    <li><a href="https://www.elrinconhabla.com/articulo/ayuntamiento/rincon-victoria-destina-885300-euros-presupuestos-participativos/20191117154734008756.html" class="hover:underline">El rincón habla</a></li>
+                    <li><a href="https://www.diariosur.es/axarquia/rincon/campana-presupuestos-participativos-20191015201719-nt.html" class="hover:underline">Diario Sur</a></li>
+                    <li><a href="https://www.malagahoy.es/provincia/Rincon-de-la-Victoria-embarcadero_0_1402060136.html" class="hover:underline">Málaga Hoy</a></li>
+                    <li><a href="https://ga.rincondelavictoria.es/en/propuestas1?p_p_id=citizenproposalweb_INSTANCE_419m2uccHNxV&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_citizenproposalweb_INSTANCE_419m2uccHNxV_categoryId=442087" class="hover:underline">Rincón de la Victoria - Ayuntamiento</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Sección de Llamada a la Acción -->
+        <section class="text-center my-12">
+            <h2 class="text-3xl font-bold text-dark-brown mb-4">Recogida de Firmas</h2>
+            <p class="text-lg text-dark-brown mb-6">
+                Firma y comparte para defender nuestra costa:
+            </p>
+            <a href="https://chng.it/vmLwfc9b2H" class="inline-block bg-teal-water text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-110 hover:bg-teal-dark">
+                👉 Firma aquí
+            </a>
+        </section>
+
+        <!-- Sección de Documentación Oficial y Prensa -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+            <!-- Columna de Información Oficial y Alegaciones -->
+            <div>
+                <h2 class="text-3xl font-bold text-dark-brown mb-6">Información Oficial</h2>
+                <div class="bg-card-beige p-6 rounded-2xl shadow-lg mb-6 border-4 border-border-brown">
+                    <p class="mb-4">
+                        <a href="#" class="text-teal-water hover:text-teal-dark underline font-medium">
+                            Publicación en BOJA
+                        </a> del proceso de información pública del proyecto.
+                    </p>
+                    <p>
+                        Documentación completa del proyecto puede consultarse <a href="#" class="text-teal-water hover:text-teal-dark underline font-medium">aquí</a>.
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl font-bold text-dark-brown mt-8 mb-6">Presentación de Alegaciones</h2>
+                <div class="bg-card-beige p-6 rounded-2xl shadow-lg border-4 border-border-brown">
+                    <p class="text-dark-brown mb-4">
+                        Si estás en contra, es muy importante presentar alegaciones antes de que finalice el plazo el <span class="font-bold text-dark-brown">24 de septiembre de 2025</span>.
+                    </p>
+                    <a href="#" class="inline-block bg-teal-dark text-white font-bold py-3 px-6 rounded-full shadow-md transform transition duration-300 hover:scale-105 hover:bg-teal-water mb-4">
+                        Ejemplo de escrito de alegación (PDF)
+                    </a>
+                    
+                    <!-- Generador de Escritos -->
+                    <h3 class="text-2xl font-semibold text-dark-brown mt-6 mb-4">Generador de escritos de alegación</h3>
+                    <p class="text-dark-brown mb-4">
+                        Hemos creado una aplicación para generar el texto con tus datos personales. <span class="font-bold text-dark-brown">Los datos no se almacenan.</span>
+                    </p>
+                    <form id="allegationForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-dark-brown">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required class="w-full p-2 rounded-lg bg-gray-200 border border-border-brown focus:outline-none focus:ring-2 focus:ring-teal-water">
+                        </div>
+                        <div>
+                            <label for="id" class="block text-dark-brown">DNI/NIE</label>
+                            <input type="text" id="id" name="id" required class="w-full p-2 rounded-lg bg-gray-200 border border-border-brown focus:outline-none focus:ring-2 focus:ring-teal-water">
+                        </div>
+                        <div>
+                            <label for="address" class="block text-dark-brown">Dirección</label>
+                            <input type="text" id="address" name="address" required class="w-full p-2 rounded-lg bg-gray-200 border border-border-brown focus:outline-none focus:ring-2 focus:ring-teal-water">
+                        </div>
+                        <div>
+                            <label for="place" class="block text-dark-brown">Lugar</label>
+                            <input type="text" id="place" name="place" required class="w-full p-2 rounded-lg bg-gray-200 border border-border-brown focus:outline-none focus:ring-2 focus:ring-teal-water">
+                        </div>
+                        <button type="submit" id="generateButton" class="w-full bg-teal-water text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 hover:scale-105 hover:bg-teal-dark">
+                            Generar mi escrito
+                        </button>
+                    </form>
+                    <div id="message" class="mt-4 p-4 rounded-lg text-center" style="display:none;"></div>
+                    
+                    <div class="mt-6 p-4 rounded-lg border-2 border-teal-water bg-teal-water/10">
+                        <p class="text-dark-brown text-lg font-semibold">
+                            Aquí puedes encontrar una <a href="#" class="text-teal-water hover:text-teal-dark underline">guía paso a paso</a> que explica cómo registrar tus alegaciones telemáticamente usando tu Certificado Electrónico o Cl@ve.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna de Artículos de Prensa -->
+            <div>
+                <h2 class="text-3xl font-bold text-dark-brown mb-6">Artículos de prensa</h2>
+                <div class="space-y-4">
+                    <div class="bg-card-beige p-6 rounded-2xl shadow-md border-4 border-border-brown">
+                        <p class="text-dark-brown text-sm mb-1">[09/08/2025]</p>
+                        <a href="https://www.diariosur.es/axarquia/rincon/futuro-embarcadero-cala-moral-entra-fase-exposicion-20250809130642-nt.html" class="font-medium text-dark-brown hover:underline">
+                            El futuro embarcadero de La Cala del Moral entra en fase de exposición pública
+                        </a>
+                    </div>
+                    <div class="bg-card-beige p-6 rounded-2xl shadow-md border-4 border-border-brown">
+                        <p class="text-dark-brown text-sm mb-1">[07/09/2025]</p>
+                        <a href="https://www.diariosur.es/axarquia/rincon/rechazo-embarcadero-cala-moral-20250904200647-nt.html" class="font-medium text-dark-brown hover:underline">
+                            Dudas sobre la construcción de un embarcadero en La Cala del Moral
+                        </a>
+                    </div>
+                    <div class="bg-card-beige p-6 rounded-2xl shadow-md border-4 border-border-brown">
+                        <p class="text-dark-brown text-sm mb-1">[19/09/2025]</p>
+                        <a href="https://www.diariosur.es/axarquia/rincon/embarcadero-cala-moral-propuesta-vecinal-polemico-proyecto-20250918003652-nt.html" class="font-medium text-dark-brown hover:underline">
+                            El embarcadero de La Cala del Moral: de propuesta vecinal a polémico proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer class="text-center text-dark-brown text-sm mt-12 mb-4">
+            <p>&copy; 2025 Movimiento "No al Embarcadero".</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Lógica para la generación real del escrito de alegación en PDF
+        // Utiliza la librería jsPDF
+        window.jsPDF = window.jspdf.jsPDF;
+        
+        document.getElementById('allegationForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const generateButton = document.getElementById('generateButton');
+            const showMessage = (message, type) => {
+                const messageDiv = document.getElementById('message');
+                messageDiv.textContent = message;
+                messageDiv.style.display = 'block';
+                if (type === 'success') {
+                    messageDiv.className = 'mt-4 p-4 rounded-lg bg-green-500 text-white text-center font-bold';
+                } else if (type === 'error') {
+                    messageDiv.className = 'mt-4 p-4 rounded-lg bg-red-500 text-white text-center font-bold';
+                }
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            };
+
+            generateButton.disabled = true;
+            generateButton.textContent = 'Generando...';
+
+            try {
+                const fullName = document.getElementById('name').value.toUpperCase();
+                const idNumber = document.getElementById('id').value;
+                const address = document.getElementById('address').value;
+                const place = document.getElementById('place').value;
+                const today = new Date();
+                const date = today.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                const doc = new jsPDF();
+                const margin = 20;
+                const lineHeight = 6;
+                const paragraphSpacing = 10;
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const maxPageHeight = doc.internal.pageSize.getHeight() - margin;
+                let y = margin;
+
+                const contentBlocks = [
+                    { text: 'Alegaciones a Proyecto de Embarcadero En La Cala del Moral', bold: true },
+                    { text: '', bold: false },
+                    { text: 'A/A: TITULAR DE LA DELEGACIÓN TERRITORIAL DE SOSTENIBILIDAD, MEDIO AMBIENTE Y ECONOMÍA AZUL EN MÁLAGA', bold: true },
+                    { text: '', bold: false },
+                    { text: `Yo, ${fullName}, mayor de edad, con DNI ${idNumber} y domicilio en ${address}, comparezco para exponer alegaciones en el proceso de información pública que se inició con la publicación en el BOJA nº 150, de 6 de agosto de 2025.`, bold: false },
+                    { text: `Este proceso se refiere al expediente CNC02/JUNTA/25/MA/0003, con código OLA CNC02_25_MA_0004, sobre la solicitud del Ayuntamiento de Rincón de la Victoria para el 'Proyecto básico de concesión de ocupación del Dominio Público Marítimo-Terrestre de embarcadero para apoyo y complemento de base náutica en la playa de La Cala del Moral, en el término municipal de Rincón de la Victoria (Málaga)'.`, bold: false },
+                    { text: `Las presento dentro del plazo de alegaciones, que va desde el 27 de agosto de 2025 hasta el 24 de septiembre de 2025, de acuerdo con la información disponible en el Portal de la Junta de Andalucía.`, bold: false },
+                    { text: 'A continuación, expongo las siguientes alegaciones:', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Impacto ambiental o ecológico', bold: true },
+                    { text: 'La instalación del pantalán se prevé en una zona de especial valor como son los acantilados de El Cantal, espacio donde desde hace años el propio Ayuntamiento proyecta un arrecife artificial con el fin de preservar y regenerar el entorno marino.', bold: false },
+                    { text: 'La colocación de un embarcadero y la previsión de un mayor tráfico de embarcaciones —en particular las de motor— supone una afección directa sobre el ecosistema marino y contradice el objetivo de conservación ambiental impulsado desde la propia administración local.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Seguridad marítima o náutica', bold: true },
+                    { text: 'El área afectada ya se encuentra masificada por bañistas, pescadores y usuarios de tablas de paddle surf. Además, cuando las condiciones lo permiten, es un espacio muy valorado y frecuentado por surfistas. La convivencia de estas actividades con la instalación del pantalán y el amarre de embarcaciones incrementa los riesgos de accidente y dificulta la seguridad en el uso compartido del mar.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Saturación y presión sobre el espacio público', bold: true },
+                    { text: 'Precisamente la zona donde se proyecta el embarcadero, conocida como Playa de Calaflores, es sin lugar a dudas la más concurrida por bañistas durante los meses de verano en toda la línea de costa de La Cala del Moral, ya que sus aguas poco profundas la hacen idónea para el baño familiar. La instalación de una base náutica añadiría presión sobre un área ya saturada, tanto en la playa como en los accesos. Las plazas de aparcamiento son insuficientes en temporada estival y la actuación solo haría agravar este problema.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Impacto sobre la infraestructura y estética del entorno', bold: true },
+                    { text: 'La playa de Calaflores constituye junto a su espigón y las vistas a los acantilados de El Cantal un enclave de gran valor paisajístico y todo un referente local. La implantación de un pantalán y su actividad asociada romperían la armonía visual del entorno y degradarían un paisaje singular que constituye uno de los principales atractivos naturales de la localidad.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Uso de datos desactualizados', bold: true },
+                    { text: 'La caracterización ambiental se apoya en un estudio batimétrico de 2007, sin actualización reciente.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Medidas de protección ambiental insuficientes que ponen en peligro especies protegidas', bold: true },
+                    { text: 'Aunque la Memoria promete una barrera antiturbidez “perimetral desde el primer momento”, las mediciones recogen únicamente 26 metros, claramente insuficientes para el perímetro de obra.', bold: false },
+                    { text: 'Igualmente, el proyecto incluye un “programa de seguimiento ambiental” que acto seguido considera innecesario, lo que supone una contradicción que vacía de contenido dicho compromiso.', bold: false },
+                    { text: 'Tampoco se detalla protocolo de protección o traslado para las especies protegidas detectadas (Patella ferruginea y Cymbula safiana) durante la instalación del embarcadero lo que supone un peligro ambiental muy importante.', bold: false },
+                    { text: '', bold: false },
+                    { text: 'Dudas sobre el uso real del embarcadero', bold: true },
+                    { text: 'Si bien es cierto que según la documentación del proyecto “el pantalán está diseñado para ser una instalación accesoria a la base náutica, cuyo principal objeto es servir de estructura habilitante para la traslación, manipulación y botadura de pequeñas embarcaciones, de vela principalmente, de pequeño o reducido tamaño, transportable mediante balancín o remolque manual de manera directa, sin necesidad de vehículos o tracción mecánica”, la estructura planteada, elevada sobre el mar que imposible la botadura de pequeñas embarcaciones de vela al igual que kayaks, pádel surf o piragüas.', bold: false },
+                    { text: 'El hecho de que en ningún momento se deje claro que el pantalán no podrá ser utilizado por embarcaciones propulsadas a motor genera muchas dudas, sobre todo teniendo en cuenta que el texto del proyecto habla de “otros usos que puedan ser recomendados”, dejando abierta la posibilidad a cualquier uso distinto al originalmente planteado. Esta indefinición supone una carencia sustancial, pues no es lo mismo prever un pantalán para kayaks y tablas que para embarcaciones motorizadas debido a los riesgos añadidos que ello conlleva en materia de impacto ambiental (vertidos, ruido, perturbación de especies) y de seguridad (convivencia con bañistas, surfistas y usuarios de paddle surf).', bold: false },
+                    { text: 'Las dudas vienen alimentadas además por unas declaraciones en 2019 de D. Francisco Salado, alcalde de Rincón de la Victoria, recogidas en diversos medios de comunicación como el diario Málaga Hoy, donde indicaba que “los pantalanes para desembarcar en ellos serían un atractivo más para el municipio. Podrían llegar pequeñas embarcaciones e incluso crear una ruta con Málaga desde el barco taxi.”', bold: false },
+                    { text: '', bold: false },
+                    { text: `Por todo lo expuesto, SOLICITO que se tenga por presentado este escrito, se acepten estas alegaciones y se archiven las actuaciones para la realización de un proyecto que consideramos perjudicial para el entorno y la ciudadanía.`, bold: true },
+                    { text: '', bold: false },
+                    { text: `En ${place}, a ${date}`, bold: false },
+                    { text: '', bold: false },
+                    { text: `Fdo.: ${fullName}`, bold: false },
+                ];
+
+                // Establece el tamaño de la fuente para todo el documento
+                doc.setFontSize(10);
+
+                // Renderizar cada bloque de texto
+                contentBlocks.forEach(block => {
+                    const textLines = doc.splitTextToSize(block.text, pageWidth - (margin * 2));
+                    const blockHeight = textLines.length * lineHeight;
+
+                    if (y + blockHeight > maxPageHeight) {
+                        doc.addPage();
+                        y = margin;
+                    }
+
+                    doc.setFont("helvetica", block.bold ? "bold" : "normal");
+                    doc.text(textLines, margin, y);
+                    
+                    y += blockHeight + paragraphSpacing;
+                });
+
+                doc.save(`Alegaciones-${fullName.replace(/\s/g, '-')}.pdf`);
+
+                showMessage('Documento generado con éxito. La descarga debería comenzar en breve.', 'success');
+                
+            } catch (error) {
+                console.error("Error al generar el PDF:", error);
+                showMessage('Ha ocurrido un error. Por favor, inténtalo de nuevo.', 'error');
+            } finally {
+                generateButton.disabled = false;
+                generateButton.textContent = 'Generar mi escrito';
+            }
+        });
+    </script>
+</body>
+</html>
